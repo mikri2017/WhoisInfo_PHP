@@ -96,6 +96,10 @@ class WhoisInfo
                 $tmpArray[$key] = trim($val);
             }
 
+            if ($tmpArray[0] == "% Error") {
+                $this->_errorMsg = $tmpArray[1];
+            }
+
             if ($tmpArray[0] == "whois") {
                 $whoisServer = $tmpArray[1];
                 return $whoisServer;
